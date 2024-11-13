@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SwiftApp.MainPage"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto,*"
+        BackgroundColor="#0072B5"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand">
+        <StackLayout Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center">
+            <Image
+                Margin="0,30"
+                Aspect="AspectFit"
+                HeightRequest="250"
+                Source="swift.png"
+                WidthRequest="80" />
+        </StackLayout>
+
+        <Frame
+            Grid.Row="1"
+            Margin="0,0,0,-40"
+            BorderColor="#00CFFD"
+            BackgroundColor="#1B263B"
+            CornerRadius="50"
+            HasShadow="True"
+            HeightRequest="600">
+            <Grid RowDefinitions ="Auto,Auto,Auto,Auto,Auto"
+                Padding="20,50,20,0"
+                HorizontalOptions="FillAndExpand"
+                RowSpacing="20"
+                VerticalOptions="FillAndExpand">
+                <Label
+                    Grid.Row="0"
+                    Margin="0,-15,0,0"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Login in to account"
+                    TextColor="#00AEEF" />
+                <Entry
+                    Grid.Row="1"
+                    Margin="0,20,0,0"
+                    HorizontalOptions="FillAndExpand"
+                    Placeholder="Email"
+                    PlaceholderColor="#E0E0E0"
+                    Text="{Binding Email}"
+                    TextColor="#E0E0E0"
+                    VerticalOptions="FillAndExpand" />
+                <Entry
+                    Grid.Row="2"
+                    HorizontalOptions="FillAndExpand"
+                    IsPassword="True"
+                    Placeholder="Password"
+                    PlaceholderColor="#E0E0E0"
+                    Text="{Binding Password}"
+                    TextColor="#E0E0E0"
+                    VerticalOptions="FillAndExpand" />
+                <Button
+                    Grid.Row="3"
+                    BackgroundColor="#1C375C"
+                    Command="{Binding LoginCommand}"
+                    CornerRadius="20"
+                    Text="Login" />
+
+                <Button
+                    Grid.Row="4"
+                    BackgroundColor="#0072B5"
+                    Command="{Binding NavigateSignUpCommand}"
+                    CornerRadius="20"
+                    Text="Register using Email">
+                    <Button.Shadow>
+                        <Shadow
+                            Brush="#0072B5"               
+                            Offset="5,5"
+                            Radius="10"
+                            Opacity="0.4" />
+                    </Button.Shadow>
+                </Button>
+
+            </Grid>
+        </Frame>
+    </Grid>
+
+</ContentPage>

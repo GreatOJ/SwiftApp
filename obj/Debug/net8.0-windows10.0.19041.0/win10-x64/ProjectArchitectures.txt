@@ -1,0 +1,1 @@
+C:\Users\avina\source\repos\SwiftApp\SwiftApp\SwiftApp.csproj;x64
